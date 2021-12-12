@@ -1,0 +1,86 @@
+<!-- INFORMACION DEL PERFIL -->
+<div class="container mt-4">
+    <div class="row">
+        <h2>Informacion Personal:</h2>
+        <div class="col-12">
+            <form action="">
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Nombre:</label>
+                    <input disabled type="text" class="form-control" placeholder={{usuario.nombre}}/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Usuario:</label>
+                    <input disabled type="text" class="form-control" placeholder={{usuario.user}}/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Telefono:</label>
+                    <input disabled type="text" class="form-control" placeholder={{usuario.telefono}}/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Email:</label>
+                    <input disabled type="email" class="form-control" placeholder={{usuario.email}}/>
+                </div>
+                
+                <button type="button" (click)="verDetalle(modalPerfil)" class="btn-lan mt-3"> 
+                    Editar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!--MODAL PARA EDITAR PERFIL-->
+<ng-template #modalPerfil let-modal>
+
+    <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Editar Perfil:</h1>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"> 
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+    <div class="modal-body">
+      
+        <div class="container">
+            <form [formGroup]="formularioPerfil" action="">
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Nombre:</label>
+                    <input formControlName="nombre" type="text" class="form-control" value={{usuario.nombre}}/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Usuario:</label>
+                    <input formControlName="user" type="text" class="form-control" value={{usuario.user}}/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Contraseña:</label>
+                    <input formControlName="password" type="text" class="form-control" value={{usuario.password}}/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Telefono:</label>
+                    <input formControlName="telefono" type="text" class="form-control" value={{usuario.telefono}}/>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad" style="font-size: 0.90rem;">Email:</label>
+                    <input formControlName="email" type="email" class="form-control" value={{usuario.email}}/>
+                </div>
+
+            </form>
+          </div>
+
+    </div>
+  
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="editarUsuario()" >Guardar</button>
+         <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+    </div>
+  </ng-template>
+  

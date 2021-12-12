@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "61b52de2b4da43812ef03395"
+  },
+  "nombre": "123",
+  "email": "123",
+  "telefono": "123",
+  "user": "123",
+  "password": "123",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8e53"
+  },
+  "nombre": "Amed Cueva",
+  "email": "amed.cueva@unah.hn",
+  "telefono": "99586548",
+  "user": "acueva",
+  "password": "acueva1"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8e54"
+  },
+  "nombre": "Cliente 1",
+  "email": "cliente1@unah.hn",
+  "telefono": "99887755",
+  "user": "cliente1",
+  "password": "cliente11"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8e55"
+  },
+  "nombre": "Cliente 2",
+  "email": "cliente2@unah.hn",
+  "telefono": "99999999",
+  "user": "cliente2",
+  "password": "cliente21"
+}]

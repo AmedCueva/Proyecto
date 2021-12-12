@@ -1,0 +1,18 @@
+<!--  CARDS PARA CADA CATEGORIA -->
+<div class="container-fluid mt-2" style="display: block;">
+    <div class="row">
+        <div *ngFor="let categoria of categorias" class="col-lg-3 col-md-4 col-6 mb-3">
+            <a (click)="verEmpresas(categoria)">
+                <div class="card shadow" style="background-color: #CC6600; color: white;" id="card">
+                    <img src="{{categoria.imagen}}" alt="" style="width: 100%;">
+                    <div class="card-body">
+                        <hr>
+                        <h4 class="card-title">{{categoria.nombre}}</h4>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</div>

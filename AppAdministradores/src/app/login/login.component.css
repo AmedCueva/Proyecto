@@ -1,0 +1,107 @@
+
+    #recuadro{
+        width: 25%;
+        margin-top: 100px;
+        border-radius: 0px;
+    }
+
+    #semicirculo{
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        background: #FFF48D;
+        border-radius: 0px 500px 500px 0px;
+    }
+
+    #esquina1{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        background-color: #FFAD4D;
+    }
+
+    #esquina2{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        background: #ffffff;
+        border-radius: 0px 0px 512px 0px;
+    }
+
+    #imagenLogo{       
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+    #tituloRecuadro{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        background-color: #FF9922;
+    }
+
+    #imagenLogo{
+        width: 120px;
+        left: 0px;
+        top: 0px;
+        box-sizing: border-box;
+        border-radius: 0px 231px 231px 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .navbar{
+        background-color: #FF9922;
+    }
+    
+    .nav-item{
+        margin: 5px;
+        color: black;
+    }
+    
+    #botonEmpresas{
+        background-color: #FF9090;
+        width: 100px;
+        border-radius: 3px;
+        padding: 10px;
+        color: #252525;
+    }
+    
+    #botonOrdenes{
+        background-color: #FFC581;
+        width: 100px;
+        border-radius: 3px;
+        padding: 10px;
+        color: #252525;
+    }
+    
+    #botonMotoristas{
+        background-color: #FFF492;
+        width: 100px;
+        border-radius: 3px;
+        padding: 10px;
+        color: #252525;
+    }
+    
+    #botonLogout{
+        background-color: #FF9090;
+        width: 100px;
+        border-radius: 3px;
+        margin-left:auto;
+        color: #252525;
+    }

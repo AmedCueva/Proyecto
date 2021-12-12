@@ -1,0 +1,51 @@
+<!-- FONDO -->
+<div id="esquina1"></div>
+<div id="esquina2"></div>
+<div id="semicirculo"></div>
+
+<!-- REGISTRO DE USUARIO -->
+<div id="recuadro" class="col-md-6 offset-md-7"> 
+    <div class="card" style="background-color: rgba(255, 0, 0, 0); border: none;">
+        <img id="imagenLogo" src="../../assets/logo/Logo1.png" alt="Logo"><br>
+        <div class="card-body" style="border: 2px solid #FF9922; background-color: white; border-radius: 10px;">
+            <h2 style="text-align: center;">Registro Nuevo Motorista</h2>
+            <form [formGroup]="formularioRegistro">
+                <div class="form-group">
+                    <label for="username" style="font-size: 0.90rem;">Usuario:</label>
+                    <input formControlName="user" type="text" class="form-control" placeholder="usuario"/>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password" style="font-size: 0.90rem;">Contraseña:</label>
+                    <input formControlName="password" type="password" class="form-control" placeholder="contraseña"/>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="nombre" style="font-size: 0.90rem;">Nombre:</label>
+                    <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre Completo"/>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email" style="font-size: 0.90rem;">Placa de vehiculo:</label>
+                    <input formControlName="placa" type="text" class="form-control" placeholder="Ejemplo: AAA-6789"/>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email" style="font-size: 0.90rem;">Telefono:</label>
+                    <input formControlName="telefono" type="text" class="form-control" placeholder="Numero de telefono"/>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email" style="font-size: 0.90rem;">Email:</label>
+                    <input formControlName="email" type="email" class="form-control" placeholder="Email"/>
+                </div>
+                <br>
+                
+            </form>
+            
+            <a *ngIf="formularioRegistro.valid" (click)="guardar()" class="button btn-log">Hecho</a> 
+            <a (click)="regresar()" class="button btn-log ml-2">Regresar</a><hr>
+            <p>Su solicitud sera aceptada pronto...</p>
+        </div>
+    </div>
+</div>

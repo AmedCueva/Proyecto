@@ -1,0 +1,29 @@
+<!-- Diseño del Fondo -->
+<div id="esquina1"></div>
+<div id="esquina2"></div>
+<div id="semicirculo"></div>
+
+<!-- Cuadro del Login -->
+<div id="recuadro" class="col-md-6 offset-md-7"> 
+    <div class="card" style="background-color: rgba(255, 0, 0, 0); border: none;">
+        <img id="imagenLogo" src="../../assets/logo/Logo1.png" alt="Logo"><br>
+        <div class="card-body" style="border: 2px solid #FF9922; background-color: white; border-radius: 10px;">
+            <form [formGroup]="formularioLogin">
+                <div class="form-group">
+                    <label for="username" style="font-size: 0.90rem;">Usuario:</label>
+                    <input formControlName="user" type="text" class="form-control" placeholder="usuario" required />
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password" style="font-size: 0.90rem;">Contraseña:</label>
+                    <input formControlName="pass" type="password" class="form-control" placeholder="contraseña" required />
+                </div>
+                <br>
+            </form>
+            <a (click)="login()" class="button btn-log" *ngIf="formularioLogin.valid">Login</a>
+            <br>
+            <br>
+            <a (click)="irRegistro()" >Aun no eres miembro?, Registrate</a>
+        </div>
+    </div>
+</div>

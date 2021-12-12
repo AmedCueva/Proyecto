@@ -1,0 +1,109 @@
+.visible{
+    display: block;
+}
+
+.no-visible{
+    display: none;
+}
+
+#imagenLogo{
+    width: 120px;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    border-radius: 0px 231px 231px 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar{
+    background-color: #FF9922;
+}
+
+.nav-item{
+    margin: 5px;
+    color: black;
+}
+
+#botonEmpresas{
+    background-color: #FF9090;
+    width: 100px;
+    border-radius: 3px;
+    padding: 10px;
+    color: #252525;
+}
+
+#botonOrdenes{
+    background-color: #FFC581;
+    width: 100px;
+    border-radius: 3px;
+    padding: 10px;
+    color: #252525;
+}
+
+#botonMotoristas{
+    background-color: #FFF492;
+    width: 100px;
+    border-radius: 3px;
+    padding: 10px;
+    color: #252525;
+}
+
+#botonLogout{
+    background-color: #FF9090;
+    width: 100px;
+    border-radius: 3px;
+    margin-left:auto;
+    color: #252525;
+}
+
+#imagenLogo{
+        width: 120px;
+        left: 0px;
+        top: 0px;
+        box-sizing: border-box;
+        border-radius: 0px 231px 231px 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .navbar{
+        background-color: #FF9922;
+    }
+
+    .nav-item{
+        margin: 5px;
+        color: black;
+    }
+
+    #botonEmpresas{
+        background-color: #FF9090;
+        width: 100px;
+        border-radius: 3px;
+        padding: 10px;
+        color: #252525;
+    }
+
+    #botonOrdenes{
+        background-color: #FFC581;
+        width: 100px;
+        border-radius: 3px;
+        padding: 10px;
+        color: #252525;
+    }
+
+    #botonMotoristas{
+        background-color: #FFF492;
+        width: 100px;
+        border-radius: 3px;
+        padding: 10px;
+        color: #252525;
+    }
+
+    #botonLogout{
+        background-color: #FF9090;
+        width: 100px;
+        border-radius: 3px;
+        margin-left:auto;
+        color: #252525;
+    }

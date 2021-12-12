@@ -1,0 +1,75 @@
+<!--TABLA CON PRODUCTOS EN CARRITO-->
+<div class="container mt-5">
+    <div class="row">
+        <H2>Carrito:</H2>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Subtotal</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of carrito.products">
+                        <th scope="row">{{product.nombre}}</th>
+                        <td>{{product.cantidad}}</td>
+                        <td>L. {{product.precio}}</td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+        <br>
+        <h3>Subtotal: L. {{carrito.subtotal}}</h3>
+        <h3>ISV: L. {{carrito.isv}}</h3>
+        <h3>Envio: L. {{carrito.comision}}</h3>
+        <H1>Total: L. {{carrito.total}}</H1>
+    </div>
+</div>
+
+<!--BOTON PARA VER PROCESAR ORDEN-->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <button *ngIf="carrito.products.length > 0" type="button" class="btn btn-lan" (click)="procesar(modalDetalle)">
+                <i class="fas fa-2x fa-check-circle" style="color: white; margin-right: 3px;"></i>Procesar Orden
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--MODAL PARA AGREGAR DETALLES-->
+<ng-template #modalDetalle let-modal style="width: 90%;">
+  <div class="modal-header">
+    <h1 class="modal-title" id="exampleModalLabel">Detalle de su pedido:</h1>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <form [formGroup]="formularioDetalle" action="">
+          <div class="form-group">
+              <label for="cantidad" style="font-size: 0.90rem;">Direccion:</label>
+              <input formControlName="latitud" type="text" class="form-control" placeholder="Latitud"/>
+              <input formControlName="longitud" type="text" class="form-control" placeholder="Longitud"/>
+          </div>
+              <br>
+          <div class="form-group">
+              <label for="cantidad" style="font-size: 0.90rem;">Pago:</label>
+              <select formControlName="tipoPago" class="form-control" name="" id="">
+                  <option value="Tarjeta Debito">Tarjeta Debito</option>
+                  <option value="Tarjeta Credito">Tarjeta Credito</option>
+                  <option value="Efectivo">Efectivo</option>
+              </select>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="terminar()">Procesar Orden</button>
+  </div>
+</ng-template>

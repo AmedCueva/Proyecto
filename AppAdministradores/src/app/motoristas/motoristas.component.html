@@ -1,0 +1,32 @@
+<!--TABLA CON PEDIDOS EN ESTADO PENDIENTE-->
+<div class="container mt-5">
+    <div class="row">
+        <H2>Listado Motoristas:</H2>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Telefono</th>
+                      <th scope="col">Usuario</th>
+                      <th scope="col">Placa</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let m of motoristas">
+                      <th scope="row">{{m.nombre}}</th>
+                      <td>{{m.telefono}}</td>
+                      <td>{{m.user}}</td>
+                      <td>{{m.placa}}</td>
+                      <td>{{m.estado}}</td>
+                      <td>
+                          <button (click)="cambiarEstado(m)">Cambiar Estado</button>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>

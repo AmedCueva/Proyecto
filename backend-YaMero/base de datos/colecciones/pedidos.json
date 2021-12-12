@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "619bfab3152dbead4fff8e33"
+  },
+  "fecha": "09/12/2021",
+  "clienteID": "619bfab3152dbead4cdf8e53",
+  "cliente": "Amed Cueva",
+  "telefono": "99586548",
+  "direccion": [
+    14.1,
+    -87.2167
+  ],
+  "motoristaID": "619bfab3152dbead4cdf8e22",
+  "motorista": "Cristiano Ronaldo",
+  "estado": "Pendiente",
+  "empresa": "BeerBox",
+  "productos": [
+    {
+      "nombre": "Barena",
+      "precio": 33,
+      "cantidad": 6
+    }
+  ],
+  "subtotal": 198,
+  "isv": 29,
+  "comision": 60,
+  "total": 287,
+  "tipoPago": "Efectivo"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4fff8e34"
+  },
+  "fecha": "10/12/2021",
+  "clienteID": "619bfab3152dbead4cdf8e54",
+  "cliente": "Cliente 1",
+  "telefono": "99887755",
+  "direccion": [
+    14.3,
+    -87.2167
+  ],
+  "motoristaID": "619bfab3152dbead4cdf8e21",
+  "motorista": "Jose Perez",
+  "estado": "En Camino",
+  "empresa": "McDonalds",
+  "productos": [
+    {
+      "nombre": "McNifica",
+      "precio": 110,
+      "cantidad": 2
+    }
+  ],
+  "subtotal": 220,
+  "isv": 33,
+  "comision": 60,
+  "total": 313,
+  "tipoPago": "Tarjeta de Credito"
+}]

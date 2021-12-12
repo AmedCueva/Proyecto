@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8e21"
+  },
+  "nombre": "Jose Perez",
+  "email": "jperez@gmail.com",
+  "telefono": "98584587",
+  "user": "jperez",
+  "password": "jperez1",
+  "placa": "MTP-8578",
+  "estado": "Activo"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8e22"
+  },
+  "nombre": "Cristiano Ronaldo",
+  "email": "cristiano@gmail.com",
+  "telefono": "98584587",
+  "user": "cronaldo",
+  "password": "cronaldo1",
+  "placa": "MTP-8328",
+  "estado": "Activo"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8e23"
+  },
+  "nombre": "Motorista 1",
+  "email": "motorista1o@gmail.com",
+  "telefono": "98584587",
+  "user": "motorista1",
+  "password": "motorista11",
+  "placa": "MTP-8548",
+  "estado": "Inactivo"
+}]

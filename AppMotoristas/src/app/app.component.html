@@ -1,0 +1,41 @@
+<!-------------------------------------- MIENTRAS NO SE HAYAN LOGEADO -------------------------------------->
+
+<!-- COMPONENTE DE LOGIN -->
+<app-login *ngIf="regionVisible=='login' && usuarioActual==''"
+    (onIrRegistro)="registrar()"
+    (onLogin)="login($event)"
+></app-login>
+
+<!-- COMPONENTE DE REGISTRO -->
+<app-registro *ngIf="regionVisible=='registro' && usuarioActual==''"
+    (onIrLogin)="logout()"
+></app-registro>
+
+
+<!-------------------------------------- SI HAY UN USUARIO LOGEADO -------------------------------------->
+
+<!-- COMPONENTE DEL MENU -->
+<app-menu *ngIf="usuarioActual!=''"
+    (onIrPedidos)="iraPedidos()"
+    (onIrHistorial)="iraHistorial()"
+    (onIrPerfil)="iraPerfil()"
+    (onIrHome)="iraHome()"
+    (onSalir)="logout()"
+></app-menu>
+
+<app-home #home [ngClass]="{'visible': regionVisible=='home', 'no-visible': regionVisible!='home'}"
+    (onIrPedidos)="iraPedidos()"
+    (onTomarPedido)="tomarPedido($event)"
+></app-home>
+
+<app-pedidos #pedidos [ngClass]="{'visible': regionVisible=='pedidos', 'no-visible': regionVisible!='pedidos'}"
+    (onCambiarEstado)="iraHome()"
+></app-pedidos>
+
+<app-perfil #perfil [ngClass]="{'visible': regionVisible=='perfil', 'no-visible': regionVisible!='perfil'}"
+    (onEditar)="logout()"
+></app-perfil>
+
+
+
+<router-outlet></router-outlet>

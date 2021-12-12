@@ -1,0 +1,23 @@
+<!--SALUDO-->
+<div class="container mt-4 ml-5">
+    <div class="row">
+        <h1>Categoria {{categoriaActual.nombre}}</h1><br>
+    </div>
+</div>
+
+<!--  CARDS PARA CADA EMPRESA -->
+<div class="container-fluid mt-2" style="display: block;">
+    <div class="row">
+        <div *ngFor="let empresa of empresas" class="col-lg-3 col-md-4 col-6 mb-3">
+                <div class="card shadow" style="background-color: rgb(252, 255, 226); color: rgb(170, 107, 12);" id="card">
+                    <img src={{empresa.banner}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">{{empresa.nombre}}</h1>
+                        <h5 class="card-text">{{empresa.descripcion}}</h5>
+                        <a (click)="verProductos(empresa)" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>

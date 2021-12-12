@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8f01"
+  },
+  "nombre": "Farmacias",
+  "imagen": "../../assets/categorias/farmacias.png"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8f02"
+  },
+  "nombre": "Restaurantes",
+  "imagen": "../../assets/categorias/restaurantes.png"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8f03"
+  },
+  "nombre": "Cafe",
+  "imagen": "../../assets/categorias/cafe.png"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8f04"
+  },
+  "nombre": "Bebidas",
+  "imagen": "../../assets/categorias/bebidas.png"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8f05"
+  },
+  "nombre": "Conveniencia",
+  "imagen": "../../assets/categorias/conveniencia.png"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8f06"
+  },
+  "nombre": "Postres",
+  "imagen": "../../assets/categorias/postres.png"
+}]

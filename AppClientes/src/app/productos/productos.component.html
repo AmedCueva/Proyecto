@@ -1,0 +1,51 @@
+<!--SALUDO-->
+<div class="container mt-4 ml-5">
+    <div class="row">
+        <h1>EMPRESA {{empresaActual.nombre}}</h1><br>
+    </div>
+</div>
+
+<!--  CARDS PARA CADA EMPRESA -->
+<div class="container-fluid mt-2" style="display: block;">
+    <div class="row">
+        <div *ngFor="let producto of productos" class="col-lg-3 col-md-4 col-6 mb-3">
+                <div class="card shadow" style="background-color: rgb(252, 255, 226); color: rgb(170, 107, 12);" id="card">
+                  <img src={{producto.imagen}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">{{producto.nombre}}</h1>
+                        <h5 class="card-text">L. {{producto.precio}}</h5>
+                        <button type="button" class="btn btn-primary" (click)="alCarrito(modalPedido, producto)">
+                          al carrito!
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<!--MODAL PARA AGREGAR PRODUCTOS-->
+<ng-template #modalPedido let-modal style="display: flex; width: 85% !important;">
+
+  <div class="modal-header">
+    <h1 class="modal-title" id="exampleModalLabel">Producto {{productoActual.nombre}}</h1>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="container">
+      <form [formGroup]="formularioPedido" action="">
+        <div class="form-group">
+          <label for="cantidad" style="font-size: 0.90rem;">Cantidad:</label>
+          <input formControlName="cantidad" type="number" class="form-control" placeholder="Ejemplo: 1"/>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="agregarAlCarrito()">Agregar al Carrito</button>
+  </div>
+</ng-template>

@@ -1,0 +1,62 @@
+<!----------------- USUARIO SIN LOGIN -------------------------->
+
+<!-- Componente LANDING PAGE -->
+<div *ngIf="regionVisible=='landing' && usuarioActual==''">
+    <app-landing (onIrLogin)="iraLogin()"></app-landing>
+    <app-footer></app-footer>
+</div>
+
+<!-- Componente LOGIN -->
+<app-login *ngIf="regionVisible=='login' && usuarioActual==''"
+    (onIrRegistro)="iraRegistro()"
+    (onLogin)="login($event)"
+></app-login>
+
+<!-- Componente REGISTRO -->
+<app-registro *ngIf="regionVisible=='registro' && usuarioActual==''"
+    (onIrLogin)="logout()"
+></app-registro>
+
+
+
+<!------------------- USUARIO CON LOGIN ------------------------>
+
+<app-menu #menu  [ngClass]="{'visible': usuarioActual!='', 'no-visible': usuarioActual==''}"
+    (onIrPedidos)="iraPedidos()"
+    (onIrPerfil)="iraPerfil()"
+    (onIrHome)="iraHome()"
+    (onIrCarrito)="iraCarrito()"
+    (onSalir)="logout()"
+></app-menu>
+
+<!--SALUDO-->
+<div class="container mt-4 ml-5" *ngIf="regionVisible=='home' && usuarioActual!=''">
+    <div class="row">
+        <h1>Hola {{usuarioActual.nombre}}</h1><br>
+        <h2>Que deseas hoy?</h2>
+    </div>
+</div>
+
+<app-home *ngIf="regionVisible=='home' && usuarioActual!=''"
+    (onIrEmpresas)="iraEmpresas($event)"
+></app-home>
+
+<app-pedidos #pedidos  [ngClass]="{'visible': regionVisible=='pedidos', 'no-visible': regionVisible!='pedidos'}"></app-pedidos>
+
+<app-perfil #perfil  [ngClass]="{'visible': regionVisible=='perfil', 'no-visible': regionVisible!='perfil'}"
+    (onEditar)="logout()"        
+></app-perfil>
+
+<app-carrito #carrito  [ngClass]="{'visible': regionVisible=='carrito', 'no-visible': regionVisible!='carrito'}"
+    (onProcesar)="procesarPedido()"
+></app-carrito>
+
+<app-empresas #empresas  [ngClass]="{'visible': regionVisible=='empresas', 'no-visible': regionVisible!='empresas'}" 
+    (onIrProductos)="iraProductos($event)"
+></app-empresas>
+
+<app-productos #productos  [ngClass]="{'visible': regionVisible=='productos', 'no-visible': regionVisible!='productos'}"
+    (onIrAlCarrito)="irCarro($event)" 
+></app-productos>
+
+<router-outlet></router-outlet>

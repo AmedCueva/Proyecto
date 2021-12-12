@@ -1,0 +1,44 @@
+.comp{
+    background-color: white;
+    display: block;
+    position: fixed;
+}
+
+.naranja{
+    color: #daca41;
+}
+
+.amarillo{
+    color: #FF9922;
+}
+
+.img-lan{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: block;
+    width: 150px;
+    border-radius: 50px;
+}
+.text-lan{
+    margin-top: 50px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.logo-lan{
+    width: 180px; 
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-lan{
+    background-color: #FF9922;
+    padding: 20px;
+    color: white;
+    border-radius: 10%;
+    font-size: large;
+    border-color: #da8a30;
+}

@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8a21"
+  },
+  "nombre": "Erick Marin",
+  "email": "emarin@unah.hn",
+  "telefono": "98754856",
+  "user": "emarin",
+  "password": "emarin1"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8a22"
+  },
+  "nombre": "Administrador 2",
+  "email": "admin2@unah.hn",
+  "telefono": "98754856",
+  "user": "admin2",
+  "password": "admin21"
+},{
+  "_id": {
+    "$oid": "619bfab3152dbead4cdf8a23"
+  },
+  "nombre": "Administrador 3",
+  "email": "admin3@unah.hn",
+  "telefono": "98754856",
+  "user": "admin3",
+  "password": "admin31"
+}]

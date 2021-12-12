@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "619bbbb3152dbead4cdf8e21"
+  },
+  "categoriaID": "619bfab3152dbead4cdf8f01",
+  "nombre": "Kielsa",
+  "logo": "../../assets/empresas/kielsa/logo.png",
+  "banner": "../../assets/empresas/kielsa/banner.png",
+  "descripcion": "Aqui ahorras mas!",
+  "calificacion": 5,
+  "direccion": "Col. Humuya",
+  "telefono": "2234-5526",
+  "productos": [
+    {
+      "_id": "637bfab3152dbead4cdf8e77",
+      "nombre": "Panadol",
+      "imagen": "../../assets/empresas/kielsa/productos.png",
+      "precio": 25
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "619bbbb3152dbead4cdf8e22"
+  },
+  "categoriaID": "619bfab3152dbead4cdf8f02",
+  "nombre": "McDonalds",
+  "logo": "../../assets/empresas/mcdonalds/logo.png",
+  "banner": "../../assets/empresas/mcdonalds/banner.png",
+  "descripcion": "I'm lovin' it!",
+  "calificacion": 5,
+  "direccion": "Col. Loarque",
+  "telefono": "2234-5526",
+  "productos": [
+    {
+      "_id": "637bfab3152dbead4cdf8e77",
+      "nombre": "McNifica",
+      "imagen": "../../assets/empresas/mcdonalds/productos.png",
+      "precio": 110
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "619bbbb3152dbead4cdf8e23"
+  },
+  "categoriaID": "619bfab3152dbead4cdf8f03",
+  "nombre": "Espresso Americano",
+  "logo": "../../assets/empresas/espresso/logo.png",
+  "banner": "../../assets/empresas/espresso/banner.png",
+  "descripcion": "El sabor del cafe!",
+  "calificacion": 2,
+  "direccion": "Col. Tiloarque",
+  "telefono": "2234-8754",
+  "productos": [
+    {
+      "_id": "637bfab3152dbead4cdf8e77",
+      "nombre": "Capuccino",
+      "imagen": "../../assets/empresas/espresso/productos.png",
+      "precio": 50
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "619bbbb3152dbead4cdf8e24"
+  },
+  "categoriaID": "619bfab3152dbead4cdf8f04",
+  "nombre": "BeerBox",
+  "logo": "../../assets/empresas/beerbox/logo.png",
+  "banner": "../../assets/empresas/beerbox/banner.png",
+  "descripcion": "mmmmmmm!",
+  "calificacion": 4,
+  "direccion": "Col. Nueva Esperanza",
+  "telefono": "2234-9632",
+  "productos": [
+    {
+      "_id": "637bfab3152dbead4cdf8e77",
+      "nombre": "Barena",
+      "imagen": "../../assets/empresas/beerbox/productos.png",
+      "precio": 33
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "619bbbb3152dbead4cdf8e25"
+  },
+  "categoriaID": "619bfab3152dbead4cdf8f05",
+  "nombre": "Circle K",
+  "logo": "../../assets/empresas/circlek/logo.png",
+  "banner": "../../assets/empresas/circlek/banner.png",
+  "descripcion": "I love this place!",
+  "calificacion": 5,
+  "direccion": "Col. America",
+  "telefono": "2288-1144",
+  "productos": [
+    {
+      "_id": "637bfab3152dbead4cdf8e77",
+      "nombre": "Zambos",
+      "imagen": "../../assets/empresas/circlek/productos.png",
+      "precio": 25
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "619bbbb3152dbead4cdf8e26"
+  },
+  "categoriaID": "619bfab3152dbead4cdf8f06",
+  "nombre": "Sarita",
+  "logo": "../../assets/empresas/sarita/logo.png",
+  "banner": "../../assets/empresas/sarita/banner.png",
+  "descripcion": "Comparte tu alegria!",
+  "calificacion": 4,
+  "direccion": "Res. Las Hadas",
+  "telefono": "2202-5555",
+  "productos": [
+    {
+      "_id": "637bfab3152dbead4cdf8e77",
+      "nombre": "Cono",
+      "imagen": "../../assets/empresas/sarita/productos.png",
+      "precio": 15
+    }
+  ]
+}]

@@ -1,0 +1,36 @@
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<app-login *ngIf="usuarioActual==''"
+  (onLogin)="login($event)"
+></app-login>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+  <app-menu #menu [ngClass]="{'visible': regionVisible!='login', 'no-visible': regionVisible=='login'}"
+    (onIrHome)="iraHome()"
+    (onIrPedidos)="iraPedidos()"
+    (onIrEmpresas)="iraEmpresas()"
+    (onIrMotoristas)="iraMotoristas()"
+    (onLogout)="logout()"
+  ></app-menu>
+
+  <app-home #home [ngClass]="{'visible': regionVisible=='home', 'no-visible': regionVisible!='home'}"></app-home>
+
+  <app-empresas #empresas [ngClass]="{'visible': regionVisible=='empresas', 'no-visible': regionVisible!='empresas'}"
+    (onAgregarProductos)="iraEmpresas()"
+  ></app-empresas>
+
+  <app-productos #productos [ngClass]="{'visible': regionVisible=='productos', 'no-visible': regionVisible!='productos'}"></app-productos>
+
+  <app-motoristas #motoristas [ngClass]="{'visible': regionVisible=='motoristas', 'no-visible': regionVisible!='motoristas'}"
+    (onEditar0)="iraHome()"
+    (onEditar)="iraMotoristas()"
+  ></app-motoristas>
+
+  <app-pedidos #pedidos [ngClass]="{'visible': regionVisible=='pedidos', 'no-visible': regionVisible!='pedidos'}"
+    (onEditar0)="iraHome()"
+    (onEditar)="iraPedidos()"
+  ></app-pedidos>
+
+<router-outlet></router-outlet>

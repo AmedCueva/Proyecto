@@ -1,0 +1,23 @@
+<!--MENU PRINCIPAL-->
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #f0850c;">
+    <div class="container-fluid">
+      <img (click)="irHome()" src="../../assets/logo/Logo1.png" alt="" style="width: 70px;">
+      <a style="font-weight: bold; margin-right: 170px;" (click)="irCarrito()"><i style="color: black;" class="fas fa-2x fa-shopping-cart"></i> <span style="font-weight: bold;">{{cantidad}}</span> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" (click)="irPedidos()"><i class="fas fa-2x fa-list-ul"></i>`  Pedidos`</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" (click)="irPerfil()"><i class="fas fa-2x fa-user"></i>`  Perfil`</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" (click)="salir()"><i class="fas fa-2x fa-times-circle"></i>`  Salir`</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

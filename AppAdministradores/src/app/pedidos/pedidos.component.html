@@ -1,0 +1,111 @@
+<!--TABLA CON PEDIDOS EN ESTADO PENDIENTE-->
+<div class="container mt-5">
+    <div class="row">
+        <H2>Pedidos sin asignar:</H2>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Empresa</th>
+                      <th scope="col">Cliente</th>
+                      <th scope="col">Direccion</th>
+                      <th scope="col">Total</th>
+                      <th scope="col">Tipo de Pago</th>
+                      <th scope="col">Detalle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let pedido of pedidos">
+                      <th scope="row">{{pedido.fecha}}</th>
+                      <td>{{pedido.empresa}}</td>
+                      <td>{{pedido.cliente}}</td>
+                      <td>{{pedido.direccion}}</td>
+                      <td>{{pedido.total}}</td>
+                      <td>{{pedido.tipoPago}}</td>
+                      <td>
+                        <i (click)="verDetalle(modalPedido, pedido)" class="fas fa-info-circle"></i>
+                      </td>
+                      <td>
+                          <button (click)="asignar(modalMot, pedido)">Asignar</button>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--MODAL PARA VER DETALLES DE PEDIDOS-->
+<ng-template #modalPedido let-modal>
+
+    <div class="modal-header">
+      <h1 class="modal-title" id="exampleModalLabel">Detalle de su pedido:</h1>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+    <div class="modal-body">
+      <div class="container ml-4">
+        <div class="row">
+          
+          <div class="container">
+            <form action="">
+                <h3 style="font-size: 0.90rem;">Fecha: {{pedidoActual.fecha}}</h3>
+                <h3 style="font-size: 0.90rem;">Empresa: {{pedidoActual.empresa}}</h3><br>
+                <hr>
+                <h3 style="font-size: 0.90rem;">Productos:</h3><br>
+                <h3 style="font-size: 0.90rem;" *ngFor="let producto of pedidoActual.productos">-{{producto.nombre}}: {{producto.cantidad}}</h3>
+  
+                <hr>
+                <h3 style="font-size: 0.90rem;">Subtotal: L. {{pedidoActual.subtotal}}</h3>
+                <h3 style="font-size: 0.90rem;">ISV: L. {{pedidoActual.isv}}</h3>
+                <h3 style="font-size: 0.90rem;">Envio: L. {{pedidoActual.comision}}</h3>
+                <h2 style="font-size: 0.90rem;">TOTAL: L. {{pedidoActual.total}}</h2><br>
+                <hr>
+                <h3 style="font-size: 0.90rem;">Direccion:</h3>
+                <h3 style="font-size: 0.90rem;">Latitud:{{pedidoActual.direccion[0]}}, Longitud:{{pedidoActual.direccion[1]}}</h3>
+                <h3 style="font-size: 0.90rem;">Pago: {{pedidoActual.tipoPago}}</h3>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+    </div>
+  </ng-template>
+
+  <!--MODAL PARA VER Motoristas-->
+<ng-template #modalMot let-modal>
+
+  <div class="modal-header">
+    <h1 class="modal-title" id="exampleModalLabel">Motoristas:</h1>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="container ml-4">
+      <div class="row">
+        
+        <div class="container">
+          <form [formGroup]="formularioMot" action="">
+              <select formControlName="motoristaForm" name="" id="" style="width: auto;">
+                <option *ngFor="let m of motoristas" value={{m._id}}>{{m.nombre}}</option>
+              </select>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+    <button type="button" class="btn btn-secondary" (click)="asignarPedido()">Asignar</button>
+  </div>
+</ng-template>

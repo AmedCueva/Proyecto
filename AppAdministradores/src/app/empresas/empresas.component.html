@@ -1,0 +1,151 @@
+<!--  CARDS PARA CADA EMPRESA -->
+<div class="container-fluid mt-2" style="display: block;">
+    <div>
+        <button (click)="nueva(modalNuevaEmpresa)" class="btn" style="background-color: #FF9922; color: white;">Agregar Empresa</button>
+    </div>
+    <hr>
+    <div class="row">
+        <div *ngFor="let empresa of empresas" class="col-lg-3 col-md-4 col-6 mb-3">
+                <div class="card shadow" style="background-color: rgb(252, 255, 226); color: rgb(170, 107, 12);" id="card">
+                    <img src={{empresa.banner}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">{{empresa.nombre}}</h1>
+                        <h5 class="card-text">{{empresa.descripcion}}</h5>
+                        <a (click)="verProductos(modalverProductos, empresa)" class="btn btn-primary">Productos</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<!--MODAL PARA Nueva Empresa-->
+<ng-template #modalNuevaEmpresa let-modal>
+    <div class="modal-header" style="background-color: #FF9922; color: white;">
+      <h1 class="modal-title" id="exampleModalLabel">Nueva Empresa:</h1>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+    <div class="modal-body">
+      <div class="container ml-4">
+        <div class="row">
+          
+          <div class="container">
+            <form [formGroup]="formularioNueva">
+                <div class="form-group">
+                    <label for="username" style="font-size: 0.90rem;">Categoria:</label>
+                    <select formControlName="categoriaID" name="" id="">
+                        <option *ngFor="let c of categorias" value={{c._id}}>{{c.nombre}}</option>
+                    </select>
+                </div> 
+
+                <div class="form-group">
+                    <label for="username" style="font-size: 0.90rem;">Nombre:</label>
+                    <input formControlName="nombre" type="text" class="form-control" >
+                </div> 
+                <br>
+                <div class="form-group">
+                    <label for="password" style="font-size: 0.90rem;">Descripcion:</label>
+                    <input formControlName="descripcion" type="text" class="form-control" >
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email" style="font-size: 0.90rem;">Telefono:</label>
+                    <input formControlName="telefono" type="text" class="form-control"  />
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email" style="font-size: 0.90rem;">Direccion:</label>
+                    <input formControlName="direccion" type="email" class="form-control" />
+                </div>
+                <br>                
+            </form>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+      <button *ngIf="formularioNueva.valid" type="button" class="btn btn-success" (click)="agregarNueva()">Guardar</button>
+    </div>
+  </ng-template>
+
+
+  <!--MODAL PARA Ver Productos-->
+<ng-template #modalverProductos let-modal>
+  <div class="modal-header" style="background-color: #FF9922; color: white;">
+    <h1 class="modal-title" id="exampleModalLabel">Productos de {{empresaActual.nombre}}</h1>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="container ml-4">
+      <div class="row">
+        <div>
+          <button (click)="nuevoProducto(modalNuevProducto)" class="btn" style="background-color: #FF9922; color: white;">Agregar Producto</button>
+      </div>
+        <hr>
+        <div *ngFor="let producto of empresaActual.productos" class="col-lg-3 col-md-4 col-6 mb-3">
+          <div class="card shadow" style="background-color: rgb(252, 255, 226); color: rgb(170, 107, 12);" id="card">
+              <img src={{producto.imagen}} class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h1 class="card-title">{{producto.nombre}}</h1>
+                  <h5 class="card-text">L. {{producto.precio}}</h5>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+  </div>
+</ng-template>
+
+
+<!--MODAL PARA NUEVO Productos-->
+<ng-template #modalNuevProducto let-modal>
+
+  <div class="modal-header" style="background-color: #FF9922; color: white;">
+    <h1 class="modal-title" id="exampleModalLabel">Nuevo Producto:</h1>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="container ml-4">
+      <div class="row">
+        
+        <div class="container">
+          <form [formGroup]="formularioNuevoProducto">
+              <div class="form-group">
+                  <label for="username" style="font-size: 0.90rem;">Nombre:</label>
+                  <input formControlName="nombre" type="text" class="form-control" >
+              </div> 
+              <br>
+              <div class="form-group">
+                  <label for="password" style="font-size: 0.90rem;">Precio:</label>
+                  <input formControlName="precio" type="text" class="form-control" >
+              </div>
+              <br>                
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button *ngIf="formularioNuevoProducto.valid" type="button" class="btn btn-success" (click)="agregarProducto()">Guardar</button>
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+  </div>
+</ng-template>
+

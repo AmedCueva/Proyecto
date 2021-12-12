@@ -1,0 +1,70 @@
+<!--TABLA CON PEDIDOS EN CAMINO-->
+<div class="container mt-5">
+    <div class="row">
+        <H2>Pedidos en Camino:</H2>
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Empresa</th>
+                      <th scope="col">Monto</th>
+                      <th scope="col">Estado</th>
+                      <th scope="col">Detalle</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let pedido of pedidos">
+                      <th scope="row">{{pedido.empresa}}</th>
+                      <td>L. {{pedido.total}}</td>
+                      <td>{{pedido.estado}}</td>
+                      <td>
+                        <i class="fas fa-info-circle" (click)="verDetalle(modalPedido, pedido)"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!--MODAL PARA VER DETALLES DE PEDIDOS-->
+<ng-template #modalPedido let-modal>
+  <div class="modal-header">
+    <h1 class="modal-title" id="exampleModalLabel">Detalle de su pedido:</h1>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="container ml-4">
+      <div class="row">
+        
+        <div class="container">
+          <form action="">
+              <h3 style="font-size: 0.90rem;">Fecha: {{pedidoActual.fecha}}</h3>
+              <h3 style="font-size: 0.90rem;">Motorista: {{pedidoActual.motorista}}</h3>
+              <h3 style="font-size: 0.90rem;">Empresa: {{pedidoActual.empresa}}</h3><br>
+              <hr>
+              <h3 style="font-size: 0.90rem;">Productos:</h3><br>
+              <h3 style="font-size: 0.90rem;" *ngFor="let producto of pedidoActual.productos">-{{producto.nombre}}: {{producto.cantidad}}</h3>
+              <hr>
+              <h3 style="font-size: 0.90rem;">Subtotal: L. {{pedidoActual.subtotal}}</h3>
+              <h3 style="font-size: 0.90rem;">ISV: L. {{pedidoActual.isv}}</h3>
+              <h3 style="font-size: 0.90rem;">Envio: L. {{pedidoActual.comision}}</h3>
+              <h2 style="font-size: 0.90rem;">TOTAL: L. {{pedidoActual.total}}</h2><br>
+              <hr>
+              <h3 style="font-size: 0.90rem;">Direccion:</h3>
+              <h3 style="font-size: 0.90rem;">Latitud:{{pedidoActual.direccion[0]}}, Longitud:{{pedidoActual.direccion[1]}}</h3>
+              <h3 style="font-size: 0.90rem;">Pago: {{pedidoActual.tipoPago}}</h3>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cerrar')">Cancelar</button>
+  </div>
+</ng-template>
